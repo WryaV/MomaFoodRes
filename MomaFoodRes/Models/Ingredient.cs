@@ -1,9 +1,12 @@
-﻿namespace MomaFoodRes.Models
-{
-    public class Ingredient
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
+namespace MomaFoodRes.Models
     {
+    public class Ingredient
+        {
         public int IngredientId { get; set; }
         public string Name { get; set; }
-        public ICollection<ProductIngredient> ProductIngredients { get; set; }  
+        [ValidateNever]
+        public ICollection<ProductIngredient> ProductIngredients { get; set; }
+        }
     }
-}
